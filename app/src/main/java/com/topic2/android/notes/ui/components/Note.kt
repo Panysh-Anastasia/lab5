@@ -11,6 +11,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Checkbox
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
@@ -28,12 +29,15 @@ val backgroundShape: Shape = RoundedCornerShape(4.dp)
         .fillMaxWidth()
         .background(Color.White, backgroundShape)){
         NoteColor(
+            modifier = Modifier.align(Alignment.CenterVertically),
             color = rwGreen ,
             size = 40.dp ,
             padding = 4.dp,
             border = 1.dp
         )
-        Column(modifier = Modifier.weight(1f)) {
+        Column(modifier = Modifier
+            .weight(1f)
+            .align(Alignment.CenterVertically)) {
             Text(text = "Загаловок", maxLines = 1)
             Text(text = "Содержание", maxLines = 1)
         }
